@@ -1,0 +1,15 @@
+# git clone https://github.com/chadlung/vagrant-kafka.git
+Vagrant.configure(2) do |config|
+  config.vm.box = "for-kafka-path-single-vm-base"
+  #config.vm.box_url = "./singleVM.box"
+  "file:///Users/catherine/github_com/kafka_python/singleVM.box"
+  config.vm.hostname = "kafka-1"
+  config.vm.provision :shell, path: "install_kafka.sh"
+  config.vm.synced_folder "/Users/catherine/PycharmProjects/kafka-path", "/repos"
+  config.vm.network "private_network", ip: "192.168.33.10"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "vagrant-kafka-python"
+    vb.memory = "2048"
+  end
+end
