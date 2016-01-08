@@ -1,5 +1,5 @@
 REPLICA = {
             "GROUP_ID" : "my_group_id",
-            "TOPIC" : "my-replicated-topic",
-            "BROKER" : ["192.168.33.10:9092"]
+            "TOPIC" : "s2graph_path_friend",
+            "BROKER" : ["192.168.127.10:9092"]
             }
